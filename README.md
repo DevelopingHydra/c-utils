@@ -7,12 +7,12 @@ This project was created using the NetBeans IDE. Therefore there is a lot of gar
 If you also want to use NetBeans you can just clone the project.
 Otherwise just use the files in the c-utils-files/ directory. The CUnit tests are in the test/ folder.
 
-#ToDo
+# ToDo
 - stack
   - unit tests
 - map
   - destructuring does not work
   - test other data types as well
 
-#Outlook
+# Outlook
 There may be more libs in the future, like a generic LinkedList, generic ArrayList
