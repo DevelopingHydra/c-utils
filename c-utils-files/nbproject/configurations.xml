@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>genericArrayList.h</itemPath>
+      <itemPath>genericLinkedList.h</itemPath>
       <itemPath>genericMap.h</itemPath>
       <itemPath>genericStack.h</itemPath>
     </logicalFolder>
@@ -14,6 +16,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>genericArrayList.c</itemPath>
+      <itemPath>genericLinkedList.c</itemPath>
       <itemPath>genericMap.c</itemPath>
       <itemPath>genericStack.c</itemPath>
     </logicalFolder>
@@ -32,6 +36,18 @@
                      projectFiles="true"
                      kind="TEST">
         <itemPath>tests/cunit_generic-stack.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4"
+                     displayName="Testsuite_generic array list"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/cunit_generic-array-list.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3"
+                     displayName="Testsuite_generic linked list"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/cunit_generic-linked-list.c</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -69,6 +85,30 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f3">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>-lcunit</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>-lcunit</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="genericArrayList.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="genericArrayList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="genericLinkedList.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="genericLinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="genericMap.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="genericMap.h" ex="false" tool="3" flavor2="0">
@@ -76,6 +116,10 @@
       <item path="genericStack.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="genericStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/cunit_generic-array-list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tests/cunit_generic-linked-list.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="tests/cunit_generic-map.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -120,6 +164,30 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f3">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerOptionItem>-lcunit</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+          <linkerLibItems>
+            <linkerOptionItem>-lcunit</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="genericArrayList.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="genericArrayList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="genericLinkedList.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="genericLinkedList.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="genericMap.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="genericMap.h" ex="false" tool="3" flavor2="0">
@@ -127,6 +195,10 @@
       <item path="genericStack.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="genericStack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/cunit_generic-array-list.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="tests/cunit_generic-linked-list.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="tests/cunit_generic-map.c" ex="false" tool="0" flavor2="0">
       </item>

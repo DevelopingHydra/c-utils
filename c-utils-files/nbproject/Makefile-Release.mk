@@ -35,6 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/genericArrayList.o \
+	${OBJECTDIR}/genericLinkedList.o \
 	${OBJECTDIR}/genericMap.o \
 	${OBJECTDIR}/genericStack.o
 
@@ -44,10 +46,14 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
-	${TESTDIR}/TestFiles/f1
+	${TESTDIR}/TestFiles/f1 \
+	${TESTDIR}/TestFiles/f4 \
+	${TESTDIR}/TestFiles/f3
 
 # Test Object Files
 TESTOBJECTFILES= \
+	${TESTDIR}/tests/cunit_generic-array-list.o \
+	${TESTDIR}/tests/cunit_generic-linked-list.o \
 	${TESTDIR}/tests/cunit_generic-map.o \
 	${TESTDIR}/tests/cunit_generic-stack.o
 
@@ -77,6 +83,16 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libc-utils-files.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libc-utils-files.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libc-utils-files.a
 
+${OBJECTDIR}/genericArrayList.o: genericArrayList.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/genericArrayList.o genericArrayList.c
+
+${OBJECTDIR}/genericLinkedList.o: genericLinkedList.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/genericLinkedList.o genericLinkedList.c
+
 ${OBJECTDIR}/genericMap.o: genericMap.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -102,6 +118,14 @@ ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/cunit_generic-stack.o ${OBJECTFILES:%.
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.c} -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS}   -lcunit 
 
+${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/cunit_generic-array-list.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.c} -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS}   -lcunit 
+
+${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/cunit_generic-linked-list.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.c} -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS}   -lcunit 
+
 
 ${TESTDIR}/tests/cunit_generic-map.o: tests/cunit_generic-map.c 
 	${MKDIR} -p ${TESTDIR}/tests
@@ -114,6 +138,44 @@ ${TESTDIR}/tests/cunit_generic-stack.o: tests/cunit_generic-stack.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/cunit_generic-stack.o tests/cunit_generic-stack.c
 
+
+${TESTDIR}/tests/cunit_generic-array-list.o: tests/cunit_generic-array-list.c 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/cunit_generic-array-list.o tests/cunit_generic-array-list.c
+
+
+${TESTDIR}/tests/cunit_generic-linked-list.o: tests/cunit_generic-linked-list.c 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/cunit_generic-linked-list.o tests/cunit_generic-linked-list.c
+
+
+${OBJECTDIR}/genericArrayList_nomain.o: ${OBJECTDIR}/genericArrayList.o genericArrayList.c 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/genericArrayList.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.c) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/genericArrayList_nomain.o genericArrayList.c;\
+	else  \
+	    ${CP} ${OBJECTDIR}/genericArrayList.o ${OBJECTDIR}/genericArrayList_nomain.o;\
+	fi
+
+${OBJECTDIR}/genericLinkedList_nomain.o: ${OBJECTDIR}/genericLinkedList.o genericLinkedList.c 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/genericLinkedList.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.c) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/genericLinkedList_nomain.o genericLinkedList.c;\
+	else  \
+	    ${CP} ${OBJECTDIR}/genericLinkedList.o ${OBJECTDIR}/genericLinkedList_nomain.o;\
+	fi
 
 ${OBJECTDIR}/genericMap_nomain.o: ${OBJECTDIR}/genericMap.o genericMap.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -147,6 +209,8 @@ ${OBJECTDIR}/genericStack_nomain.o: ${OBJECTDIR}/genericStack.o genericStack.c
 	then  \
 	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
+	    ${TESTDIR}/TestFiles/f4 || true; \
+	    ${TESTDIR}/TestFiles/f3 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi
