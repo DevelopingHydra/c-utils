@@ -1,8 +1,7 @@
-/*
- * File:   cunit_map.c
- * Author: kollmanm16
- *
- * Created on 27-Apr-2018, 14:13:19
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
  */
 
 #include <stdio.h>
