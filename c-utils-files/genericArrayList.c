@@ -1,3 +1,9 @@
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
+ */
+
 #include <string.h>
 
 #include "genericArrayList.h"

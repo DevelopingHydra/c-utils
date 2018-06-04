@@ -1,3 +1,9 @@
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
+ */
+
 #ifndef GENERICLINKESLIST_H
 #define GENERICLINKESLIST_H
 

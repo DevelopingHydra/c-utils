@@ -1,3 +1,8 @@
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
+ */
 
 #ifndef GENERICARRAYLIST_H
 #define GENERICARRAYLIST_H

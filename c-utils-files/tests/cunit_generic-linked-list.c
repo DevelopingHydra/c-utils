@@ -1,3 +1,8 @@
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,9 +1,9 @@
-/*
- * File:   newcunittest.c
- * Author: xeniu
- *
- * Created on 04.05.2018, 22:18:56
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
  */
+
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
- * File:   genericStack.h
- * Author: kollmanm16
- *
- * Created on April 24, 2018, 4:01 PM
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
  */
 
 #ifndef GENERICSTACK_H

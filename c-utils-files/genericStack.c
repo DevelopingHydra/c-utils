@@ -1,3 +1,8 @@
+/* 
+ * Author: Manuel Kollmann
+ * 
+ * This file is under the MIT License
+ */
 
 #include <stdlib.h>
 #include <memory.h>
